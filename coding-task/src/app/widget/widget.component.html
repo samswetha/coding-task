@@ -1,0 +1,16 @@
+<div class="card border-primary mb-3">
+        <div class="card-header  bg-primary border-primary">
+               {{headerName}}
+              </div>
+             
+        <div class="card-body">
+                <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let task of tasks">
+                          <h6 class="list-group-item-heading">{{task.text}}</h6>
+                   <span class="list-group-item-text text-muted">{{task.creator}}</span>
+                        </li>
+                        
+                    </ul>
+        </div>
+      </div>
+      

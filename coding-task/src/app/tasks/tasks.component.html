@@ -1,0 +1,44 @@
+<button type="button" class="btn btn-primary" (click)="changeStatus()">Mark Done</button>
+&nbsp;
+<button type="button" class="btn btn-primary" (click)="open()"> Add New Task</button>
+
+<table class="table table-striped">
+        <thead>
+        <tr>
+                <th scope="col" >#</th>
+          <th scope="col" >Task Name</th>
+          <th scope="col" >Created By</th>
+          <th scope="col" >Is GLobal</th>
+          <th scope="col" >Is Leader</th>
+          <th scope="col" >Start Date</th>
+          <th scope="col" >End Date</th>
+          <th scope="col" >Status</th>
+
+
+           
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of allTasksList">
+          
+          <td><input type="checkbox" 
+            (change)="task.Checked = !task.Checked" /></td>
+          <td>{{task.text}}</td>
+          <td>{{task.creator}}</td>
+          <td><fa-icon [icon]="task.isGlobal?faCheck:faClose"></fa-icon></td>
+          <td><fa-icon [icon]="task.isLeader?faCheck:faClose"></fa-icon></td>
+          <td>{{task.start}}</td>
+          <td>{{task.end}}</td>
+          <td>{{task.isCompleted?'Completed':'Open'}}</td>
+
+         
+        </tr>
+        </tbody>
+
+      
+
+        
+      </table>
+      
+ 
+      

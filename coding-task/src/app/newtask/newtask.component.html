@@ -1,0 +1,73 @@
+<div class="modal-header">
+    <h4 class="modal-title">New Task </h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   
+ 
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label >Task name</label>
+            <input type="text"  [(ngModel)]="taskObj.text" class="form-control">
+             
+          </div>
+          <div class="col-md-4 mb-3">
+            <label >Task Created By</label>
+            <input type="text" [(ngModel)]="taskObj.creator"  class="form-control">
+             
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label >Is Global Task</label>
+            <select  class="form-control" [(ngModel)]="taskObj.isGlobal" >
+                
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+               
+              </select>
+             
+          </div>
+          
+          </div>
+        
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label >Is Team Task</label>
+              <select  class="form-control" [(ngModel)]="taskObj.isLeader" >
+                
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+               
+              </select>
+               
+            </div>
+            <div class="col-md-4  mb-3">
+              <label >Task Start Date</label>
+              <div class="input-group">
+              <input type="text"  ngbDatepicker #d="ngbDatepicker" [(ngModel)]="taskObj.start"  class="form-control">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button"  (click)="d.toggle()" id="button-addon2">..</button>
+              </div>
+            </div>
+
+            </div>
+  
+             <div class="col-md-4  mb-3">
+              <label >Task Start Date</label>
+              <div class="input-group">
+              <input type="text"  ngbDatepicker #d1="ngbDatepicker" [(ngModel)]="taskObj.end"  class="form-control">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button"  (click)="d1    .toggle()" id="button-addon2">..</button>
+              </div>
+            </div>
+                
+            </div>
+        
+ 
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="addTask()" >Save</button>
+  </div>
